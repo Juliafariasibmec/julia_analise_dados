@@ -1,0 +1,21 @@
+[project]
+name = "julia-analise-dados"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Julia", email = "202301452538@alunos.ibmec.edu.br" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "notebook>=7.6.2",
+    "pandas>=3.0.5",
+]
+
+[project.scripts]
+julia-analise-dados = "julia_analise_dados:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"

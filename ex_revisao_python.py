@@ -25,6 +25,7 @@ nome = "Julia"
 idade = 20
 altura = 1.59
 eh_estudante = True
+
 # Exercício 2 — Saudação
 # Peça ao usuário seu nome e sua cidade. Depois, mostre a mensagem:
 # "Olá, <nome>! Você mora em <cidade>."
@@ -84,7 +85,12 @@ fahrenheit =
 # Exercício 8 — Área de um retângulo
 # Leia a largura e a altura de um retângulo. Calcule e mostre sua área.
 # Fórmula: area = largura * altura
-
+n1 = input("Digite o numero da largura")
+n2 = input("Digite o numero da altura")
+n1 = int(n1)
+n2 = int(n2)
+total = n1 * n2
+print(total)
 
 # Exercício 9 — Manipulação de texto
 # Peça uma frase ao usuário e mostre:
@@ -120,12 +126,19 @@ else:
 # Dica: use o operador de resto da divisão (%).
 numero = 11
 resto = numero % 2 # o % significa o resto da divisisão por 2
-if resto == 0: """ continuar essa questão"""
+if resto == 0: 
+ print("O número é par")
+else:
+ print("O número é ímpar")
     
 
 # Exercício 13 — Aprovação
 # Leia a média de um aluno. Mostre "Aprovado" se a média for maior ou igual
 # a 7 e "Reprovado" caso contrário.
+if media >=7:
+    print ("aluno aprovado")
+else:
+    print ("aluno reprovado")
 
 
 # Exercício 14 — Aprovação com recuperação
@@ -304,46 +317,72 @@ aluno = {"nome": "laerte",
 # Dado o dicionário abaixo, mostre separadamente o nome e o preço do produto.
 # produto = {"nome": "Teclado", "preco": 150.0, "estoque": 8}
 produto = {"nome": "Teclado", "preco": 150.0, "estoque": 8}
-
+produto["nome"]
 
 # Exercício 43 — Adicionando uma chave
 # Adicione a chave "marca" ao dicionário abaixo e mostre o resultado.
 # produto = {"nome": "Mouse", "preco": 80.0}
-
+produto = {"nome": "Mouse", "preco": 80.0}
+produto["marca"] = "logitech"
+print (produto)
 
 # Exercício 44 — Atualizando um valor
 # Altere o estoque do produto abaixo para 15 unidades e mostre o dicionário.
 # produto = {"nome": "Monitor", "preco": 900.0, "estoque": 5}
+produto = {"nome": "Monitor", "preco": 900.0, "estoque": 5}
+produto = ["estoque"] = 15
+print (produto)
 
 
 # Exercício 45 — Removendo uma chave
 # Remova a chave "cor" do dicionário abaixo usando pop() e mostre o resultado.
 # carro = {"marca": "Ford", "modelo": "Ka", "ano": 2020, "cor": "prata"}
-
+carro = {"marca": "Ford", "modelo": "Ka", "ano": 2020, "cor": "prata"}
+carro.pop("cor")
 
 # Exercício 46 — Verificando uma chave
 # Verifique se a chave "telefone" existe no dicionário abaixo. Mostre uma
 # mensagem informando o resultado.
 # contato = {"nome": "Marina", "email": "marina@email.com"}
-
+contato = {"nome": "Marina", "email": "marina@email.com"}
+if "telefone" in contato;
+   print ("com telefone")
+else:
+   print ("sem telefone")
 
 # Exercício 47 — Chaves e valores
 # Use keys() para mostrar todas as chaves e values() para mostrar todos os
 # valores do dicionário abaixo.
 # capitais = {"Brasil": "Brasília", "Argentina": "Buenos Aires", "Chile": "Santiago"}
+capitais = {"Brasil": "Brasília", "Argentina": "Buenos Aires", "Chile": "Santiago"}
+print(capitais.keys ())
+print(capitais.values ())
 
 
-# Exercício 48 — Percorrendo um dicionário
+# Exercício 48 — Percorrendo um dicionário QUESTÃO DE FOORLOOP DE DICIONÁRIO
 # Use um laço for e items() para mostrar o nome de cada produto e seu preço.
 # produtos = {"caderno": 25.0, "caneta": 4.5, "mochila": 120.0}
+produtos = {"caderno": 25.0, "caneta": 4.5, "mochila": 120.0}
+for chave, valor in produtos.items():
+   print(chave)
+   print(valor) #""para percorrerum dicionário, sempre preciso ter chave e um valor""
 
 
 # Exercício 49 — Soma dos valores
 # Calcule a soma de todas as quantidades do dicionário abaixo e mostre o total.
 # estoque = {"notebook": 5, "mouse": 20, "teclado": 12, "monitor": 4}
-
+estoque = {"notebook": 5, "mouse": 20, "teclado": 12, "monitor": 4}
+sum(estoque.values())
 
 # Exercício 50 — Frequência de palavras
 # Percorra a lista abaixo e crie um dicionário que conte quantas vezes cada
 # palavra aparece. Ao final, mostre o dicionário de frequências.
 # palavras = ["python", "dados", "python", "lista", "dados", "python"]
+
+palavras = ["python", "dados", "python", "lista", "dados", "python"]
+frequencia={}
+for p in palavras:
+   if p in frequencia:
+      frequencia
+
+   #p é variável, poderia chamar de palavra se eu quisesse 
