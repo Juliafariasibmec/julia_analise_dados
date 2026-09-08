@@ -131,3 +131,44 @@ dados_ibmec = response.json()
 lat_ibmec = float(dados_ibmec[0]["lat"])
 lon_ibmec = float(dados[0]["lon"])
 print(lat_ibmec, lon_ibmec)
+
+
+#AULA 8 de setembro- conexão com banco de dados SQlite
+import sqlite3
+import pandas as pd
+engine = sqlite3.connect("db_alunos.db")
+query = "select * from tb_alunos_final"
+df_carros = pd.read_sql (query,engine)
+col = ['id_aluno', 'valor_carro_10mil']
+df_carros = df_carros[col]
+df_carros
+
+#merge entre alunos e carros
+
+df_alunos.merge(df_carros, on= "id_alunos", how="left")
+
+#regressão linear
+import sqlite3
+import pandas as pd
+engine = sqlite3.connect("db_alunos.db")
+query = "select * from tb_alunos_final"
+df_final= pd.read_sql (query,engine)
+df_final.columns
+import statsmodels.api as sm
+
+x = df_final["faltas"]
+y = df_final['nota_final']
+x = sm.add_constant(x)
+modelo = sm.OLS(y,x,missing="drop").fit()
+print(modelo.summary())
+#regressão múltipla
+#definição das colunas, que são as variaveis independentes
+col = [ 'faltas', 'horas_estudo_semana', 'participacao_aula',
+      'horas_trabalho_semana', 'horas_sono_noite',
+      'distancia_faculdade_km',   'valor_carro_10mil' ]
+
+x = df_final[col]
+y = df_final['nota_final']
+x = sm.add_constant(x)
+modelo = sm.OLS(y,x,missing="drop").fit()
+print(modelo.summary())
